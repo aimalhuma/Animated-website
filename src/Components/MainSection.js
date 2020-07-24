@@ -38,7 +38,7 @@ const MainSection = () => {
 
 
         ],
-        timing: { duration: 500,  direction: "alternate", fill: "forwards" },
+        timing: { duration: 500,  direction: "alternate", fill: "forwards" ,iterations: Infinity},
       });
     });
   }, [animate]);
