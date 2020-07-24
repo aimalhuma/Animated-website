@@ -1,5 +1,5 @@
 import React from 'react'
-// import './App.css'
+
 import useWebAnimations ,{bounce,rubberBand}from "@wellyshen/use-web-animations";
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
@@ -23,23 +23,16 @@ const useStyles = makeStyles((theme) => ({
       color:'white',
       backgroundColor: "blueviolet"
   },
- 
   }
 }));
-
 const Navbar = () => {
   const classes = useStyles();
   const preventDefault = (event) => event.preventDefault();
-
- 
   const { ref, playState, getAnimation } = useWebAnimations({...bounce})
   return (
     <nav class="product-filter" >
         <h1 align="left">Build Your Website</h1>
-        {/* <span class="animated bounce"></span> */}
-      
         <div class="sort">
-      
           <div class="collection-sort">
           <Typography className={classes.root}>
           <Link >
@@ -58,14 +51,8 @@ const Navbar = () => {
           </IconButton>
            </Link>
 </Typography>
-            
-            
-
           </div>
-    
-      
         </div>
-      
       </nav>
   )
 }

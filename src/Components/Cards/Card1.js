@@ -12,33 +12,29 @@ import ScrollAnimation from 'react-animate-on-scroll';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-   
   },
 });
-
 export default function Card1() {
   const classes = useStyles();
-
   return (
-    // <ScrollAnimation animate="fadeIn">
-        <Card className={classes.root} >
+    <Card className={classes.root} >
       <CardActionArea >
-      <ScrollAnimation animateIn='fadeIn'>   <ScrollAnimation animateIn='bounce'
-         initiallyVisible={true}
+        <ScrollAnimation animateIn='fadeIn'>   <ScrollAnimation animateIn='bounce'
+          initiallyVisible={true}
           animateOnce={true}> <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="240"
-          image="./images/imag7.jpg"
-          title="Contemplative Reptile"
-        /> </ScrollAnimation></ScrollAnimation>
-       <CardContent>
+            component="img"
+            alt="Contemplative Reptile"
+            height="240"
+            image="./images/imag7.jpg"
+            title="Contemplative Reptile"
+          /> </ScrollAnimation></ScrollAnimation>
+        <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-          Insights
+            Insights
           </Typography>
-           <Typography variant="body2" color="textSecondary" component="p">
-           We’re obsessed with new ways to transform old paradigms,explore the latest industry trends,
-            and celebrate the kind of future-forward thought leadership that can help 
+          <Typography variant="body2" color="textSecondary" component="p">
+            We’re obsessed with new ways to transform old paradigms,explore the latest industry trends,
+            and celebrate the kind of future-forward thought leadership that can help
             you accelerate your brand and make impactful decisions.
           </Typography>
         </CardContent>

@@ -19,7 +19,6 @@ import Zoom from 'react-reveal/Zoom';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    // display: 'flex',
   },
   paper: {
     padding: theme.spacing(2),
@@ -27,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     flexGrow: 1,
   },
-
   backgroundImage: {
     backgroundImage: "url('./images/imag2.jpg')",
     height: '70vh',
@@ -35,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center center ',
     backgroundRepeat: 'no-repeat',
     overflow: 'hidden',
-    // backgroundPosition:'fixed'
   },
   blogsection: {
     backgroundColor: 'blueviolet',
@@ -44,26 +41,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center center ',
     backgroundRepeat: 'no-repeat',
     overflow: 'hidden',
-    // backgroundPosition:'fixed'
   },
-
-
-  //   cards:{
-  // alignItems:'center',
-  // padding: theme.spacing(10, 7),
-  // direction:'row'
-  //   },
-  // aftercards:{
-  // backgroundColor:red,
-  //   }
-
 }));
 
 function App() {
   const classes = useStyles();
-
   const { ref, playState, getAnimation } = useWebAnimations
-
     ({
       keyframes: [{ transform: "translateX(500px)" }, { transform: "translate(100%,0)" },
       ],
@@ -73,25 +56,18 @@ function App() {
         direction: "alternate",
         easing: "ease-in-out",
       },
-
     });
   return (
     <div className={classes.root}>
       <Grid container  >
         <Grid item xs={12}>
-
           <Paper><Navbar /></Paper>
         </Grid>
         <Grid item xs={12}>
-
           <Paper className={classes.backgroundImage} ><Header /></Paper>
-
         </Grid>
-
         <Grid item xs={3}>
           <Paper className="cards" ><Cards /></Paper>
-
-
         </Grid>
         <Grid item xs={3}>
           <Paper className="cards"><Card1 /></Paper>
@@ -102,40 +78,25 @@ function App() {
         <Grid item xs={3}>
           <Paper className="cards"><Card3 /></Paper>
         </Grid>
-
       </Grid>
-
-
-      {/* sec container */}
       <Grid container  >
         <Grid item xs={12}>
-
-
         </Grid>
         <Grid item xs={12}>
-       
-          <Paper className={classes.blogsection} ><MainSection/></Paper>
-         
+          <Paper className={classes.blogsection} ><MainSection /></Paper>
         </Grid>
-
         <Grid item xs={3}>
-          
           <Paper className="cards" ><Cards /></Paper>
-        
-
         </Grid>
-      
-        <Grid item xs={3}> 
-         
+        <Grid item xs={3}>
           <Paper className="cards"><Card1 /></Paper>
         </Grid>
         <Grid item xs={3}>
-       <Zoom>  <Paper className="cards"><Card2 /></Paper></Zoom> 
+          <Zoom>  <Paper className="cards"><Card2 /></Paper></Zoom>
         </Grid>
         <Grid item xs={3}>
           <Paper className="cards"><Card3 /></Paper>
         </Grid>
-
       </Grid>
       <Footer />
     </div>
