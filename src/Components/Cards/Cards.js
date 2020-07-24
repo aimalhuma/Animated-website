@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import useWebAnimations ,{bounce,rubberBand}from "@wellyshen/use-web-animations";
+import useWebAnimations, { bounce, rubberBand } from "@wellyshen/use-web-animations";
 import ScrollAnimation from 'react-animate-on-scroll';
 
 const useStyles = makeStyles({
@@ -15,15 +15,13 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
 });
-
 export default function ImgMediaCard() {
   const classes = useStyles();
-  const { ref, playState, getAnimation } = useWebAnimations({...rubberBand})
-
+  const { ref, playState, getAnimation } = useWebAnimations({ ...rubberBand })
   return (
     <Card className={classes.root}>
       <CardActionArea>
-      <ScrollAnimation animateIn='fadeIn'>   <CardMedia ref={ref}
+        <ScrollAnimation animateIn='fadeIn'>   <CardMedia ref={ref}
           component="img"
           alt="Contemplative Reptile"
           height="240"
@@ -31,12 +29,12 @@ export default function ImgMediaCard() {
           title="Contemplative Reptile"
         /></ScrollAnimation>
         <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          Insights
+          <Typography gutterBottom variant="h5" component="h2">
+            Insights
           </Typography>
-           <Typography variant="body2" color="textSecondary" component="p">
-           We’re obsessed with new ways to transform old paradigms,explore the latest industry trends,
-            and celebrate the kind of future-forward thought leadership that can help 
+          <Typography variant="body2" color="textSecondary" component="p">
+            We’re obsessed with new ways to transform old paradigms,explore the latest industry trends,
+            and celebrate the kind of future-forward thought leadership that can help
             you accelerate your brand and make impactful decisions.
           </Typography>
         </CardContent>

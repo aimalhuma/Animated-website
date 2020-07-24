@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
-import Zoom from 'react-reveal/Zoom';
 import useWebAnimations, { bounce, rubberBand } from "@wellyshen/use-web-animations";
-import Reveal from 'react-reveal/Reveal';
-import ScrollAnimation from 'react-animate-on-scroll';
+
 
 const Header = () => {
   const { ref, playState, getAnimation, animate } = useWebAnimations

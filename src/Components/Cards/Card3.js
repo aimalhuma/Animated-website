@@ -15,14 +15,12 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
 });
-
 export default function ImgMediaCard() {
   const classes = useStyles();
-
   return (
     <Card className={classes.root}>
-    <CardActionArea>
-    <ScrollAnimation animateIn='fadeIn'>   <Zoom > <CardMedia
+      <CardActionArea>
+        <ScrollAnimation animateIn='fadeIn'>   <Zoom > <CardMedia
           component="img"
           alt="Contemplative Reptile"
           height="240"
@@ -30,12 +28,12 @@ export default function ImgMediaCard() {
           title="Contemplative Reptile"
         /></Zoom> </ScrollAnimation>
         <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          Insights
+          <Typography gutterBottom variant="h5" component="h2">
+            Insights
           </Typography>
-           <Typography variant="body2" color="textSecondary" component="p">
-           We’re obsessed with new ways to transform old paradigms,explore the latest industry trends,
-            and celebrate the kind of future-forward thought leadership that can help 
+          <Typography variant="body2" color="textSecondary" component="p">
+            We’re obsessed with new ways to transform old paradigms,explore the latest industry trends,
+            and celebrate the kind of future-forward thought leadership that can help
             you accelerate your brand and make impactful decisions.
           </Typography>
         </CardContent>
