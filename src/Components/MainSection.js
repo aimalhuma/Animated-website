@@ -1,126 +1,86 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import Zoom from 'react-reveal/Zoom';
+import useWebAnimations, { bounce, rubberBand } from "@wellyshen/use-web-animations";
+import Reveal from 'react-reveal/Reveal';
 import ScrollAnimation from 'react-animate-on-scroll';
-
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles({
-    root: {
-      maxWidth: 345,
-    },
-  });
+import Flip from 'react-reveal/Flip';
 
 const MainSection = () => {
-  
-    const classes = useStyles(); 
-   
+  const { ref, playState, getAnimation, animate } = useWebAnimations
+    ({
+      keyframes: [
+
+         {transform: 'translate(0px)'},
+        {transform: 'translate(-10px)'},
+        // {transform: 'translate(-5px)'},
+
+      ],
+      timing: {
+        delay: 20, // Start with a 500ms delay
+        duration: 500, // Run for 1000ms
+        iterations: Infinity, // Repeat once
+        direction: "alternate", // Run the animation forwards and then backwards
+        easing: "linear", // Use a fancy timing function
+
+
+      },
+    }, [])
+
+  useEffect(() => {
+    document.addEventListener("click", (e) => {
+      // The target will follow the mouse cursor
+      animate({
+        keyframes: [
+
+          {transform: 'translate(0px)'},
+          {transform: 'translate(-40px)'},
+       
+
+
+        ],
+        timing: { duration: 500,  direction: "alternate", fill: "forwards" },
+      });
+    });
+  }, [animate]);
+
+
+
+
   return (
-   
+    <div>
 
-<div>
-    <ScrollAnimation animateIn="fadeIn">
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image="/images/imag2.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
-    </ScrollAnimation>
+      <section class="products" >
 
-    <ScrollAnimation animate="fadeIn">
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image="/images/imag2.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
-    </ScrollAnimation>
+        {/* <!-- It's likely you'll need to link the card somewhere. You could add a button in the info, link the titles, or even wrap the entire card in an <a href="..."> -->
+*/}
+        <div class="product-card" >
+        <ScrollAnimation animateIn='fadeIn'>
+          <div class="globalanimate"  >
+          <div><img src="./images/net1.png"   height="30%" width="30%" ref={ref} /></div>  
+          </div></ScrollAnimation>
+          <div> <div class="product-image">
 
 
-    <ScrollAnimation animateIn="fadeIn">
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image="/images/imag2.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
-    </ScrollAnimation>
-</div>
-  
-    
+          </div>
+            <div class="product-info" >
+            <ScrollAnimation animateIn='flipInY'
+  animateOut='flipOutY'>
+                  <h1 className='Headertex' >Insights</h1>
+                <h5>If we’re not learning, we’re not leading. 
+                 <h2> We’re obsessed with new ways to transform old paradigms, </h2>
+                 <h2 >explore the latest industry trends, and celebrate the</h2>
+                   kind of future-forward thought leadership that can help 
+                   you accelerate your brand and make impactful decisions.</h5>
+               
+                </ScrollAnimation>
+            </div>
+          </div>
+        </div>
+
+        {/* <!-- more products --> */}
+
+      </section>
+    </div>
   )
 }
 
